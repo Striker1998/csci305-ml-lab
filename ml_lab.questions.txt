@@ -1,15 +1,15 @@
-<firstname> <lastname>
+Kyle Webster
 CSCI 305
 Spring 2018
 Lab Questions
 =======================
-1.
+1. [4,2,5,2,6,10]
 
-2.
+2. The function f will take an input list and add 1 to every element in the list
 
-3.
+3. function f with an input of an empty list will return an empty list
 
-4.
+4. the overloaded function f with an input of a list where x is the first number in the list and xs is the rest of the list. The function f will add 1 to x and recursively call f with the input of xs
 
 5.
 
@@ -23,12 +23,12 @@ Lab Questions
 
 10.
 
-11.
+11. I enjoyed changing my way of thinking to utilizing more recursive methods.
 
-12.
+12. I dislike the error messages as they tell you very little about what the program is doing to cause it to run into the issue.
 
-13.
+13. I liked the challenge of the lab. I thought it was difficult by having me be forced to think in a different way of thinking.
 
-14.
+14. I'd say between coding and debugging, I have spend 16 hours on this lab.
 
-15.
+15. I might use ML if I have to make a program that relies on a lot of recursive functions such as for a scientific study. Otherwise, I would not use this language for many other functions.

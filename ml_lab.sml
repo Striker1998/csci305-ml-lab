@@ -2,12 +2,33 @@
 *
 * CSCI 305 - ML Programming Lab
 *
-* <firstname> <lastname>
-* <email-address>
+* Kyle Webster
+* kyle1234webster@gmail.com
 *
 ***************************************************************)
+Control.Print.printDepth := 1024;
+(* f adds 1 to every integer in an input list*)
+fun f [] = [] (* function f with an input of an empty list will return an empty list *)
+  | f (x::xs) = (x + 1) :: (f xs) (* the overloaded function f with an input of a list where x is the first number in the list and xs is the rest of the list. The function f will add 1 to x and recursively call f with the input of xs *);
 
-(* Define your data type and functions here *)
+(*datatype makes a new data type with inputs element and elementSet and has 2 types: empty and Set where Set is of types 'element and 'elementSet*)
+datatype ('element) set =
+    Empty | Set of 'element * 'element set;
+
+(*isMember checks if e is a member of the set 'set'*)
+fun isMember (e, nil) = false
+|   isMember (e, set) =
+      if (e = set) then true
+      else isMember();
+
+(*Makes a Set datatype from a given list*)
+fun list2Set [] = Empty
+|   list2Set (x::nil) = Set(x, Empty)
+|   list2Set (x::xs) = if not isMember() Set(x, list2Set(xs))
+                          else Empty;
+
+
+fun isSet set = ;
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
@@ -37,7 +58,7 @@ list2Set [6, 2, 2];
 list2Set ["x", "y", "z", "x"];
 
 (* Question 1 *)
-f [3, 1, 4, 1, 5, 9]
+f [3, 1, 4, 1, 5, 9];
 
 (* Question 5 *)
 val quest5 = isMember "one" (list2Set ["1", "2", "3", "4"]);
