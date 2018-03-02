@@ -15,19 +15,19 @@ Lab Questions
 
 6. My isMember function uses tail recursion to determine if an input is a member of a set.
 
-7. best times, it was the worst of times
+7. {best times, it was the worst of times}
 
 8. Tail recursion is useful primarily because the recursion can be optimized by the compiler. This is because the calling function does no more computations after the recursive call. With head-recursion, the computation is done after the recursion call and cannot be optimized which makes tail-recursion more efficient.
 
-9.
+9. { green eggs and ham }
 
-10.
+10.{ and macaroni }
 
-11. I enjoyed changing my way of thinking to utilizing more recursive methods.
+11. I enjoyed changing my way of thinking to solving problems using recursive methods.
 
-12. I dislike the error messages as they tell you very little about what the program is doing to cause it to run into the issue.
+12. I disliked little about the ML lab, it was confusing at first and seemed hard to figure out where the data was going, but after a bit of research, it was very simple.
 
-13. I liked the challenge of the lab. I thought it was difficult by having me be forced to think in a different way of thinking.
+13. I liked the challenge of the lab. I thought it was difficult by having me forced to think in a different way of thinking, but now I prefer thinking recursively.
 
 14. I'd say between coding and debugging, I have spend 16 hours on this lab.
 

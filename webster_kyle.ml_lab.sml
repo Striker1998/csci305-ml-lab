@@ -16,17 +16,31 @@ datatype 'element set =
     Empty | Set of 'element * 'element set;
 
 (*isMember checks if e is a member of the set 'set'*)
-fun isMember e Empty = false
-|   isMember e (Set(x, xs))=
+fun isMember e Empty = false (*returns false if there is an Empty set*)
+|   isMember e (Set(x, xs))= (*if e is equal to the value x, then returns true, otherwise it'll check the value with the remaining input set*)
       if (e = x) then true
       else isMember e xs;
 
 (*Makes a Set of the datatype set from a given list*)
-fun list2Set [] = Empty
-|   list2Set (x::nil) = Set(x, Empty)
-|   list2Set (x::xs) = if isMember x (Set(hd(xs), list2Set(xs))) then list2Set(xs) else Set(x, list2Set(xs));
+fun list2Set [] = Empty (*if empty list, then the set is Empty*)
+|   list2Set (x::nil) = Set(x, Empty) (*if only 1 element of the list, then the last element of the set is x*)
+|   list2Set (x::xs) = (*if x is a member of the set, then will ignore the value, else it'll add x to the created set*)
+      if isMember x (Set(hd(xs), list2Set(xs))) then list2Set(xs) 
+      else Set(x, list2Set(xs));
 
+(*Makes a single Union set from 2 sets*)
+fun union Empty Empty = Empty (*If both inputs are empty sets, then it will return Empty*)
+|   union Empty yset = yset (*If only 1 input set is an empty set, then it will return the other set*)
+|   union xset Empty = xset (*If only 1 input set is an empty set, then it will return the other set*)
+|   union (Set(x,xs)) yset = (*If the value x is a member of set yset, then it will not add the value to the new set, otherwise, it will create a new set with the value x and recursively call union with sets xs and yset*)
+      if isMember x yset then union xs yset
+      else Set(x, union xs yset);
 
+(*Makes a single intersection set from 2 sets*)
+fun intersect Empty Empty = Empty
+|   intersect Empty yset = Empty
+|   intersect xset Empty = Empty
+|   intersect (Set(x,xs)) yset = if isMember x yset then Set(x, intersect xs yset) else intersect xs yset;
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
   | stringifyCharSet (Set(y, ys)) = Char.toString(y) ^ " " ^ stringifyCharSet(ys);
