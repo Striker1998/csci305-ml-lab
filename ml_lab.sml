@@ -6,29 +6,26 @@
 * kyle1234webster@gmail.com
 *
 ***************************************************************)
-Control.Print.printDepth := 1024;
+Control.Print.printDepth := 1024; (*allows the visibility of the entirety of the set*)
 (* f adds 1 to every integer in an input list*)
 fun f [] = [] (* function f with an input of an empty list will return an empty list *)
   | f (x::xs) = (x + 1) :: (f xs) (* the overloaded function f with an input of a list where x is the first number in the list and xs is the rest of the list. The function f will add 1 to x and recursively call f with the input of xs *);
 
 (*datatype makes a new data type with inputs element and elementSet and has 2 types: empty and Set where Set is of types 'element and 'elementSet*)
-datatype ('element) set =
+datatype 'element set =
     Empty | Set of 'element * 'element set;
 
 (*isMember checks if e is a member of the set 'set'*)
-fun isMember (e, nil) = false
-|   isMember (e, set) =
-      if (e = set) then true
-      else isMember();
+fun isMember e Empty = false
+|   isMember e (Set(x, xs))=
+      if (e = x) then true
+      else isMember e xs;
 
-(*Makes a Set datatype from a given list*)
+(*Makes a Set of the datatype set from a given list*)
 fun list2Set [] = Empty
 |   list2Set (x::nil) = Set(x, Empty)
-|   list2Set (x::xs) = if not isMember() Set(x, list2Set(xs))
-                          else Empty;
+|   list2Set (x::xs) = if isMember x (Set(hd(xs), list2Set(xs))) then list2Set(xs) else Set(x, list2Set(xs));
 
-
-fun isSet set = ;
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""

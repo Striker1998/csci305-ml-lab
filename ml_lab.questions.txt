@@ -11,13 +11,13 @@ Lab Questions
 
 4. the overloaded function f with an input of a list where x is the first number in the list and xs is the rest of the list. The function f will add 1 to x and recursively call f with the input of xs
 
-5.
+5. false : bool
 
-6.
+6. My isMember function uses tail recursion to determine if an input is a member of a set.
 
-7.
+7. best times, it was the worst of times
 
-8.
+8. Tail recursion is useful primarily because the recursion can be optimized by the compiler. This is because the calling function does no more computations after the recursive call. With head-recursion, the computation is done after the recursion call and cannot be optimized which makes tail-recursion more efficient.
 
 9.
 

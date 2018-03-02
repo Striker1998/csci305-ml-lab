@@ -37,3 +37,6 @@ fun sqsum (x:: nil) = x*x
 |   sqsum (x::xs) = (x*x) + sqsum xs;
 
 sqsum [1,2,3,4];
+
+map (op +) [(1, 2), (3, 4), (5, 6)];
+val f = map (op +);
